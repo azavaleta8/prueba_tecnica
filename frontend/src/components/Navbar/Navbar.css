@@ -1,0 +1,26 @@
+.navbar{
+    margin-bottom: 10vh;
+    height: 10vh;
+    width: 100%;
+    background-color: #282c34;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+}
+
+.navbar > div {
+    width: 50%;
+    display: flex;
+    cursor: pointer;
+}
+
+.l{
+    margin: auto;
+    margin-left: 20px;
+}
+
+.r{
+    margin: auto;
+    margin-right: 20px;
+}

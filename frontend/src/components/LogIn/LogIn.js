@@ -1,5 +1,5 @@
 import './LogIn.css';
-import React, { useState} from "react";
+import React, { useState, useEffect} from "react";
 import { Circles} from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,12 +10,20 @@ const LogIn = () => {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
 	const [errorMsg, setErrorMesg] = useState('Server Error');
+	const token = sessionStorage.getItem('token');
+	const userId = sessionStorage.getItem('user_id');
+	const emailSS = sessionStorage.getItem('email');
 
 	const isValidEmail = (email) => {
 	// eslint-disable-next-line no-useless-escape
 		return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email) && email.length <= 50;
 	}
 
+	useEffect(() => {
+		if(token && userId && emailSS ) {navigate('/dashboard')}
+	}, []);
+
+	
 	// const isValidPassword = (pass) => {
 	// 	return  pass.length >= 8 && pass.length <= 25;
 	// }
@@ -65,14 +73,16 @@ const LogIn = () => {
 			setError(true); 
 			setLoading(false);
 			if(response.status === 404) setErrorMesg('No data')
-			if(response.status === 401) setErrorMesg('Invalid Credentials')
+			if(response.status === 401) setErrorMesg('Credenciales Invalidas')
 			if(response.status === 422) setErrorMesg('Unprocessable Entity')
 			return
 		};
 
 		const result = await response.json();
-		sessionStorage.setItem('token', result.payload.token);
-		sessionStorage.setItem('id', result.payload.id);
+		console.log(result)
+		sessionStorage.setItem('token', result.payload.access_token);
+		sessionStorage.setItem('user_id', result.payload.user_id);
+		sessionStorage.setItem('email', email);
 		navigate('/dashboard');
 	}
 
@@ -85,19 +95,20 @@ const LogIn = () => {
 
 			<form style={{display:(loading ? 'none':'block')}} className="form-container" onSubmit={handleSubmit}>
 
-			<input type="text" onChange={handleChangeUser} value = {email} placeholder="Correo" maxlength="50"></input>
-			<input type="password" onChange={handleChangePassword} value = {password} placeholder="Contraseña" maxlength="25"></input>
+				<input type="text" onChange={handleChangeUser} value = {email} placeholder="Correo" maxlength="50"></input>
+				<input type="password" onChange={handleChangePassword} value = {password} placeholder="Contraseña" maxlength="25"></input>
 
-			<div style={{height:'auto', display:(!error ? 'none':'block')}}>
-				{(error && errorMsg)}
-			</div>
+				<div style={{height:'auto', display:(!error ? 'none':'block')}}>
+					{(error && errorMsg)}
+				</div>
 
-			<button  style={{marginBottom: '10px'}} type="submit" disabled={email === '' || password ===''}>Iniciar Sesion</button>
+				<button  style={{marginBottom: '10px'}} type="submit" disabled={email === '' || password ===''}>Iniciar Sesion</button>
 
 			</form>
 
-			<button style={{display:(loading ? 'none':'block')}} className='link' onClick={()=> navigate('/signup')}>Registrate
-			</button>
+			<div style={{display:(loading ? 'none':'flex')}} className='link' onClick={()=> navigate('/signup')}>
+				<span>Registrate</span>
+			</div>
 
 			<div className="spinner" style={{display:(!loading ? 'none':'flex')}}>
 			<Circles

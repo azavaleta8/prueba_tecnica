@@ -1,0 +1,115 @@
+.container {
+    display: block;
+    width: 100%;
+}
+
+.title-header{
+    height: auto;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.Admin-container {
+    margin: auto;
+    background: white;
+    border-radius: 20px 20px 0px 0px;
+    border: 3px solid #282c34;
+    min-width: 500px;
+    width: 80%;
+    height: auto;
+}
+
+.Admin-container > * {
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 95%;
+}
+
+.response > span{
+    height: auto;
+    text-align: left;
+    font-size: 15px;
+    font-family: monospace;
+    display: block;
+}
+
+.spinner{
+    display: flex;
+}
+
+.spinner > *{
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.food-options{
+    width: 20%;
+}
+
+.label-user {
+    margin-top: 10px;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+}
+
+.new-btn{
+    cursor: pointer;
+    background-color: #282c34;
+    color: white;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    margin: auto;
+    height: 50px;
+    margin-bottom: 30px;
+    font-family: monospace;
+}
+
+.form-btn{
+    cursor: pointer;
+    background-color: #282c34;
+    color: white;
+    border-radius: 15px;
+    width: 100px;
+    display: flex;
+    height: 80px;
+    margin: auto;
+    margin-right: 10px;
+}
+
+.separator {
+    border-top: 3px solid #282c34;
+}
+
+.page-btn {
+    background-color: #282c34;
+    color: white;
+    display: flex;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    width: 80px;
+    display: flex;
+}
+
+.page-btn > * {
+    margin: auto;
+}
+
+.page-btn:first-child{
+    margin: auto;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.page-btn:last-child{
+    margin: auto;
+    margin-left: 10px;
+    cursor: pointer;
+}
