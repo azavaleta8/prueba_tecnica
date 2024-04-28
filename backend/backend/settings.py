@@ -55,8 +55,11 @@ SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("Bearer",),
 }
 
+# Docker
+CELERY_BROKER_URL = "redis://redis:6379/0"
 
-CELERY_BROKER_URL = "redis://localhost:6379"
+#Local
+# CELERY_BROKER_URL = "redis://localhost:6379"
 CELERY_RESULT_BACKEND = 'db+sqlite:///results.sqlite'
 
 # # Configuración de la ruta para almacenar los resultados de las tareas
