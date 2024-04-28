@@ -6,7 +6,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.hashers import make_password, check_password
 from rest_framework.decorators import permission_classes, authentication_classes
 from rest_framework.permissions import IsAuthenticated
-from rest_framework_simplejwt.authentication import JWTAuthentication
+from .auth import CustomJWTAuthentication
 from django.core.paginator import Paginator, EmptyPage
 
 import csv
@@ -59,9 +59,9 @@ class UserListCreateAPIView(APIView):
             "payload": serializer.data
         }, status=status.HTTP_201_CREATED)
            
-@authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
 class UserRetrieveUpdateDestroyAPIView(APIView):
+
+    authentication_classes = [CustomJWTAuthentication] 
     def get(self, request, pk):
         
         try:
@@ -116,9 +116,9 @@ class LoginAPIView(APIView):
         }, status=status.HTTP_200_OK)
 
 
-@authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
 class ProcessCvsDataAPIView(APIView):
+
+    authentication_classes = [CustomJWTAuthentication] 
     def post(self, request):
 
         name = request.data.get('name')
@@ -213,9 +213,9 @@ class ProcessCvsDataAPIView(APIView):
             status=status.HTTP_200_OK
         )
 
-@authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
 class ProcessUnprocessedDataAPIView(APIView):
+
+    authentication_classes = [CustomJWTAuthentication] 
     def post(self, request):
 
         batch_data_id = request.data.get('batch_data_id')
@@ -248,10 +248,11 @@ class ProcessUnprocessedDataAPIView(APIView):
         )
 
 
-@authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
 class BatchDataRetrieveAPIView(APIView):
+
+    authentication_classes = [CustomJWTAuthentication] 
     def post(self, request):
+        
         
         user_id = request.data.get('user_id')
 
@@ -286,9 +287,9 @@ class BatchDataRetrieveAPIView(APIView):
             "payload": [serializer.data]
         }, status=status.HTTP_200_OK)
 
-@authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
 class DataRetrieveAPIView(APIView):
+
+    authentication_classes = [CustomJWTAuthentication] 
     def post(self, request):
         
         batch_id = request.data.get('batch_id')
