@@ -1,9 +1,8 @@
 import './Data.css';
 import Navbar from '../Navbar/Narvbar';
-import React, { Fragment, useState } from "react";
+import React, { useState, useEffect  } from "react";
 import { Circles} from 'react-loader-spinner';
 import { useNavigate, useParams} from 'react-router-dom';
-import { useEffect } from 'react';
 
 const Data = () => {
 
@@ -30,7 +29,7 @@ const Data = () => {
 		if(!token || !userId || !email ) {navigate('/login')}
 		getBatchData();
 		getData();
-
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [page]);
 
 	const getBatchData = async() =>{
@@ -72,7 +71,7 @@ const Data = () => {
 		};
 
 		const result = await response.json();
-		setBatchData(result.payload[0].filter((x) => x.id == id)[0])
+		setBatchData(result.payload[0].filter((x) => x.id === id)[0])
 		setLoading(false)
 		console.log(batchData)
 	}
@@ -122,7 +121,7 @@ const Data = () => {
 		const result = await response.json();
 		console.log(result)
 
-		if (page == 1){
+		if (page === 1){
 			setPrev(null)
 		}
 		else{
@@ -132,7 +131,6 @@ const Data = () => {
 		setNext(page + 1)
 
 		if(result.payload[0].length < size){
-			console.log('asdasdasd')
 			setNext(null)
 		}
 
@@ -179,7 +177,7 @@ const Data = () => {
 		};
 
 		const result = await response.json();
-		console.log(result)
+		console.log(result.payload[0])
 		setBatchData(result.payload[0]);
 	}
 
@@ -203,19 +201,25 @@ const Data = () => {
 
 	const parseStatus = (status) => {
 
-		if (status == 'In progress'){
+		if (status === 'In Progress'){
 			return 'En progreso'
 		}
 
-		if (status == 'Imcomplete'){
+		if (status === 'Imcomplete'){
 			return 'Incompleto'
 		}
 
-		if (status == 'Finished'){
+		if (status === 'Finished'){
 			return 'Terminado'
 		}
 			
 	}
+
+	const handleRefreshClick = () => {
+		batchData.status = 'In Progress'
+		getBatchData();
+		getData();
+	  };
 
 	return (
 		<div className='container'>
@@ -226,7 +230,7 @@ const Data = () => {
 
 				<div className="title-header">
 					Data
-					<span style={{cursor:'pointer'}} onClick={getData}>🔄</span>
+					<span style={{cursor:'pointer'}} onClick={handleRefreshClick}>🔄</span>
 				</div>
 
 				<div className="response">
@@ -242,7 +246,7 @@ const Data = () => {
 							</div>
 						
 
-							{batchData.status != 'Imcomplete' ? (
+							{batchData.status !== 'Imcomplete' ? (
 								<div className='form-btn-disabled'>
 									<div style={{'margin':'auto','textAlign':'center'}}>Procesesar datos faltantes</div>
 								</div>
@@ -263,7 +267,7 @@ const Data = () => {
 						{(error && errorMsg)}
 					</div>
 
-					{data && data.length == 0 && (
+					{data && data.length === 0 && (
 						<div style={{textAlign:'center'}}>No hay data</div>
 					)}
 
