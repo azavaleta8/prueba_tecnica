@@ -80,6 +80,10 @@ const LogIn = () => {
 
 		setLoading(false)
 
+		if (!response){
+			return
+		}
+
 		if (!response.ok) {
 			setError(true); 
 			setLoading(false);

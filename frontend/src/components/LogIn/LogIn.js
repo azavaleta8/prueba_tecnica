@@ -69,6 +69,10 @@ const LogIn = () => {
 			return
 		});
 
+		if (!response){
+			return
+		}
+
 		if (!response.ok) {
 			setError(true); 
 			setLoading(false);

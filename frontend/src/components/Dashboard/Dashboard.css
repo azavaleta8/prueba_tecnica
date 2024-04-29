@@ -113,3 +113,23 @@
     margin-left: 10px;
     cursor: pointer;
 }
+
+.div-input{
+    display: flex;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    height:30px; 
+    margin-top:10px;
+}
+
+button:disabled {
+    cursor: none;
+    background-color: grey !important;
+    color: linen;
+    opacity: 1;
+  }

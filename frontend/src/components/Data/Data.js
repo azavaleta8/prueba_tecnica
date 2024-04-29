@@ -54,6 +54,11 @@ const Data = () => {
 		});
 	  
 		setLoading(false)
+
+		if (!response){
+			return
+		}
+
 		if (!response.ok) {
 			setError(true); 
 			if(response.status === 404) setErrorMesg('No hay lotes de data')
@@ -100,6 +105,11 @@ const Data = () => {
 		});
 	  
 		setLoading(false)
+
+		if (!response){
+			return
+		}
+
 		if (!response.ok) {
 			setError(true); 
 			if(response.status === 404) setErrorMesg('No hay data')
@@ -160,6 +170,11 @@ const Data = () => {
 		});
 	  
 		setLoading(false)
+
+		if (!response){
+			return
+		}
+
 		if (!response.ok) {
 			setError(true); 
 			if(response.status === 404) setErrorMesg('No hay data')
@@ -216,10 +231,9 @@ const Data = () => {
 	}
 
 	const handleRefreshClick = () => {
-		batchData.status = 'In Progress'
 		getBatchData();
 		getData();
-	  };
+	};
 
 	return (
 		<div className='container'>
