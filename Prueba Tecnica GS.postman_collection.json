@@ -1,0 +1,2216 @@
+{
+	"info": {
+		"_postman_id": "33164a79-cfeb-4d3d-9dbf-9798a32cc02f",
+		"name": "Prueba Tecnica GS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10213067"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "PostUsersRegister",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@test.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "422",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"emasil\": \"test@test.com\",\r\n    \"password\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/users/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 28 Apr 2024 15:32:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": {\n        \"email\": [\n            \"This field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test@test.com\",\r\n    \"password\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/users/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 28 Apr 2024 15:32:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": {\n        \"email\": [\n            \"user with this email already exists.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test1@test.com\",\r\n    \"password\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/users/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 28 Apr 2024 15:33:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"payload\": {\n        \"id\": 2,\n        \"email\": \"test1@test.com\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "PostUserLogin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@test.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "422",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"emwail\": \"test@test.com\",\r\n    \"password\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/login/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 28 Apr 2024 14:48:29 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": {\n        \"error\": [\n            \"Invalid fields\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test@test2.com\",\r\n    \"password\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/login/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 28 Apr 2024 14:48:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": {\n        \"error\": [\n            \"Invalid credentials\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test@test.com\",\r\n    \"password\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/login/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 28 Apr 2024 14:49:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "286"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"payload\": {\n        \"user_id\": 1,\n        \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0MzE5MzUzLCJpYXQiOjE3MTQzMTU3NTMsImp0aSI6IjAwZDIzMTU3NmJkYjQ2NjE5YjEwYWYwYjQ4ZTk2MGY2IiwidXNlcl9pZCI6MX0.2Z1wsPziPzmNYlSt94i1mpU7Mong6hvPHnTBP0-loZg\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "HF",
+			"item": [
+				{
+					"name": "Sentiment Analysus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "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",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputs\":\"https://t.co/uWdVdeX0vJ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-inference.huggingface.co/models/finiteautomata/beto-sentiment-analysis",
+							"protocol": "https",
+							"host": [
+								"api-inference",
+								"huggingface",
+								"co"
+							],
+							"path": [
+								"models",
+								"finiteautomata",
+								"beto-sentiment-analysis"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "503",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"inputs\":\"hola como estas bien\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api-inference.huggingface.co/models/finiteautomata/beto-sentiment-analysis",
+									"protocol": "https",
+									"host": [
+										"api-inference",
+										"huggingface",
+										"co"
+									],
+									"path": [
+										"models",
+										"finiteautomata",
+										"beto-sentiment-analysis"
+									]
+								}
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 27 Apr 2024 01:29:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-request-id",
+									"value": "4ZKhhVC9dWZBTeXFZUfag"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "vary",
+									"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Model finiteautomata/beto-sentiment-analysis is currently loading\",\n    \"estimated_time\": 20\n}"
+						},
+						{
+							"name": "429",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"inputs\":\"https://t.co/uWdVdeX0vJ\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api-inference.huggingface.co/models/finiteautomata/beto-sentiment-analysis",
+									"protocol": "https",
+									"host": [
+										"api-inference",
+										"huggingface",
+										"co"
+									],
+									"path": [
+										"models",
+										"finiteautomata",
+										"beto-sentiment-analysis"
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 27 Apr 2024 19:20:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "165"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "vary",
+									"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "x-request-id",
+									"value": "1ouyk91djnR5J6PxWRDa4"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Rate limit reached. You reached free usage limit (reset hourly). Please subscribe to a plan at https://huggingface.co/pricing to use the API at this rate\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Emotion Analysis",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "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",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputs\":\"hola como estas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-inference.huggingface.co/models/finiteautomata/beto-emotion-analysis",
+							"protocol": "https",
+							"host": [
+								"api-inference",
+								"huggingface",
+								"co"
+							],
+							"path": [
+								"models",
+								"finiteautomata",
+								"beto-emotion-analysis"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Process Data",
+			"item": [
+				{
+					"name": "Process CSV Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Mzk2NTM3LCJpYXQiOjE3MTQzOTI5MzcsImp0aSI6ImQ2YzEzY2IwMDgzNTQxZDA5NDQ4NzI3MTQwNjE4N2UyIiwidXNlcl9pZCI6MX0.rw4JRELM08pi6pUY9QC14pAVB0SoboBvh3FN9tvW0vY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/zaval/OneDrive/Bureau/Abel/GS/prueba_tecnica/example_5.csv"
+								},
+								{
+									"key": "name",
+									"value": "lote de prueba6",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/process-data/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"process-data",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "422",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/zaval/OneDrive/Bureau/Abel/GS/prueba_tecnica/example_5.csv"
+										},
+										{
+											"key": "name",
+											"value": "lote de prueba6",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/process-data/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"process-data",
+										""
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:27:52 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": {\n        \"error\": [\n            \"Invalid fields\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/zaval/OneDrive/Bureau/Abel/GS/prueba_tecnica/example_5.csv"
+										},
+										{
+											"key": "name",
+											"value": "lote de prueba6",
+											"type": "text"
+										},
+										{
+											"key": "user_id",
+											"value": "144",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/process-data/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"process-data",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:28:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": {\n        \"error\": [\n            \"User not Found\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "422",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "name",
+											"value": "lote de prueba6",
+											"type": "text"
+										},
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/process-data/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"process-data",
+										""
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:28:25 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": {\n        \"error\": [\n            \"No se proporcionó ningún archivo CSV\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "422",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/zaval/OneDrive/Bureau/Abel/GS/prueba_tecnica/README.md"
+										},
+										{
+											"key": "name",
+											"value": "lote de prueba6",
+											"type": "text"
+										},
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/process-data/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"process-data",
+										""
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:28:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "78"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": {\n        \"error\": [\n            \"El archivo no tiene la extensión CSV\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/zaval/OneDrive/Bureau/Abel/GS/prueba_tecnica/example_5.csv"
+										},
+										{
+											"key": "name",
+											"value": "lote de prueba6",
+											"type": "text"
+										},
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/process-data/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"process-data",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:29:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "186"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"payload\": [\n        {\n            \"id\": 55,\n            \"user\": 1,\n            \"name\": \"lote de prueba6\",\n            \"size\": 4,\n            \"processed_data\": 0,\n            \"status\": \"In Progress\"\n        }\n    ],\n    \"message\": \"Los datos del archivo CSV estan siendo procesados.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Process Unprocessed Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Mzk2NTM3LCJpYXQiOjE3MTQzOTI5MzcsImp0aSI6ImQ2YzEzY2IwMDgzNTQxZDA5NDQ4NzI3MTQwNjE4N2UyIiwidXNlcl9pZCI6MX0.rw4JRELM08pi6pUY9QC14pAVB0SoboBvh3FN9tvW0vY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"batch_data_id\" : 42\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/process-unprocessed-data/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"process-unprocessed-data",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "422",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"bastch_data_id\" : 42\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/process-unprocessed-data/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"process-unprocessed-data",
+										""
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:25:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": {\n        \"error\": [\n            \"Invalid fields\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"batch_data_id\" : 4244\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/process-unprocessed-data/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"process-unprocessed-data",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:26:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": {\n        \"error\": [\n            \"Batch not Found\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"batch_data_id\" : 42\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/process-unprocessed-data/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"process-unprocessed-data",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:26:34 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "188"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"payload\": [\n        {\n            \"id\": 42,\n            \"user\": 1,\n            \"name\": \"lote de prueba3\",\n            \"size\": 48,\n            \"processed_data\": 48,\n            \"status\": \"In Progress\"\n        }\n    ],\n    \"message\": \"Los datos del archivo CSV estan siendo procesados.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Batch",
+			"item": [
+				{
+					"name": "GetBatchByUserId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Mzk2NTM3LCJpYXQiOjE3MTQzOTI5MzcsImp0aSI6ImQ2YzEzY2IwMDgzNTQxZDA5NDQ4NzI3MTQwNjE4N2UyIiwidXNlcl9pZCI6MX0.rw4JRELM08pi6pUY9QC14pAVB0SoboBvh3FN9tvW0vY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/batch/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"batch",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "422",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"usesr_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/batch/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"batch",
+										""
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:22:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": {\n        \"error\": [\n            \"Invalid fields\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": 133\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/batch/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"batch",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:22:25 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": {\n        \"error\": [\n            \"User not Found\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/batch/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"batch",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:22:45 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "502"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"payload\": [\n        [\n            {\n                \"id\": 40,\n                \"user\": 1,\n                \"name\": \"lote de prueba\",\n                \"size\": 185,\n                \"processed_data\": 185,\n                \"status\": \"Finished\"\n            },\n            {\n                \"id\": 41,\n                \"user\": 1,\n                \"name\": \"lote de prueba2\",\n                \"size\": 48,\n                \"processed_data\": 48,\n                \"status\": \"Finished\"\n            },\n            {\n                \"id\": 42,\n                \"user\": 1,\n                \"name\": \"lote de prueba3\",\n                \"size\": 48,\n                \"processed_data\": 48,\n                \"status\": \"Finished\"\n            },\n            {\n                \"id\": 44,\n                \"user\": 1,\n                \"name\": \"lote de prueba4\",\n                \"size\": 48,\n                \"processed_data\": 0,\n                \"status\": \"Imcomplete\"\n            },\n            {\n                \"id\": 46,\n                \"user\": 1,\n                \"name\": \"lote de prueba5\",\n                \"size\": 48,\n                \"processed_data\": 48,\n                \"status\": \"Finished\"\n            }\n        ]\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GetDataByBatchId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Mzk2NTM3LCJpYXQiOjE3MTQzOTI5MzcsImp0aSI6ImQ2YzEzY2IwMDgzNTQxZDA5NDQ4NzI3MTQwNjE4N2UyIiwidXNlcl9pZCI6MX0.rw4JRELM08pi6pUY9QC14pAVB0SoboBvh3FN9tvW0vY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"batch_id\": 40\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/data/?page=3&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"data",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "3"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "422",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"batch_id\": 47\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/data/?page=3&size=20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"data",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "3"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:15:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": {\n        \"error\": [\n            \"Invalid fields\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "422",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"batch_id\": 47\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/data/?page=3&size=-2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"data",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "3"
+										},
+										{
+											"key": "size",
+											"value": "-2"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:16:43 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": {\n        \"error\": [\n            \"page and pageSize must be positive\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"batch_id\": 473434\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/data/?page=3&size=20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"data",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "3"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:17:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"errors\": {\n        \"error\": [\n            \"Batch not Found\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"batch_id\": 40\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/data/?page=3&size=20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"data",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "3"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:17:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "13895"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"payload\": [\n        [\n            {\n                \"id\": 4963,\n                \"batch\": 40,\n                \"text\": \"¡Hoy podremos con todo!\",\n                \"likes\": 0,\n                \"comments\": 0,\n                \"shares\": 0,\n                \"reactions\": 0,\n                \"emotions\": [\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.8813337683677673\n                    },\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.10440558940172195\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.01023532822728157\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.0014064987190067768\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.0011216853745281696\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.0008516893140040338\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.0006454598042182624\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.9987764954566956\n                    },\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.0007321726880036294\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.0004913806333206594\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4964,\n                \"batch\": 40,\n                \"text\": \"#FelizJueves #BuenosDias #FelizDia #TecnoAccesorio #Carabobo #Valencia #SanDiego\",\n                \"likes\": 0,\n                \"comments\": 0,\n                \"shares\": 0,\n                \"reactions\": 0,\n                \"emotions\": [\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.968569278717041\n                    },\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.02493460103869438\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.0021273831371217966\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.0014947830932214856\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.001457966398447752\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.0007429284160025418\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.0006730913883075118\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9968888163566589\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.0026644498575478792\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.0004466965328902006\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4965,\n                \"batch\": 40,\n                \"text\": \"@sandiegovial https://t.co/gJ7Pwgrkjn #QuedateEnCasa\",\n                \"likes\": 25730,\n                \"comments\": 47825,\n                \"shares\": 66500,\n                \"reactions\": 140055,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.9430786371231079\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.028528906404972076\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.022113803774118423\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.0033542460296303034\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.0011715337168425322\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.0010287780314683914\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.0007239690166898072\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9976353645324707\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.0015242936788126826\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.0008403283427469432\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4966,\n                \"batch\": 40,\n                \"text\": \"2021-04-23 56mm en Junín, Buenos Aires, Argentina #pluviomano #gestionagro https://t.co/R7U8YEcI5p @caburearg https://t.co/R3RSZ5LyIT\",\n                \"likes\": 92043,\n                \"comments\": 55493,\n                \"shares\": 80199,\n                \"reactions\": 227735,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.9755444526672363\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.01414056308567524\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.00496508227661252\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.0020477352663874626\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.0013618955854326487\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.0012050634250044823\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.0007352906977757812\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9973697662353516\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.0017672384856268764\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.0008630021475255489\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4967,\n                \"batch\": 40,\n                \"text\": \"@DanteFontana3 Sipa el BCV 4,18\",\n                \"likes\": 67001,\n                \"comments\": 56042,\n                \"shares\": 94641,\n                \"reactions\": 217684,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.9709540605545044\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.014643409289419651\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.00522388843819499\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.004525883588939905\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.0021289298310875893\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.0016146446578204632\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.0009091611136682332\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.994492769241333\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.003567551262676716\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.0019396725110709667\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4968,\n                \"batch\": 40,\n                \"text\": \"@Carolapalante @Banesco En horario de oficina https://t.co/T3dmyMmV40 y te metes donde diga \\\"\\\"\\\"\\\"CATI asistente virtual\\\"\\\"\\\"\\\", allí te pide el número, te muestra las opciones y esperas a que te atiendan, te van a pedir la captura del recibo de pago que te dá el banco y dura 24h para limpiar la deuda\",\n                \"likes\": 18554,\n                \"comments\": 98709,\n                \"shares\": 89357,\n                \"reactions\": 206620,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.9790472388267517\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.0093892402946949\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.004442043602466583\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.002113751834258437\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.0021021452266722918\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.0019477074965834618\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.00095801439601928\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9959349632263184\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.0028303356375545263\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.0012346954317763448\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4969,\n                \"batch\": 40,\n                \"text\": \"@NicmerEvans Que siga manteniendo su postura de valentia, de hermandad, y siga buscando la unidad plena de un pueblo necesitado @JAVIERBERTUCCI carabobo esta contigo nuestro proximo Gobernador👏👏💪\",\n                \"likes\": 81803,\n                \"comments\": 24594,\n                \"shares\": 80023,\n                \"reactions\": 186420,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.9181498289108276\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.06217014044523239\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.011315379291772842\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.004746212158352137\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.0017868118593469262\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.0009382044663652778\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.0008934979559853673\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9395870566368103\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.05909854918718338\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.001314423163421452\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4970,\n                \"batch\": 40,\n                \"text\": \"🏁Internet Alert reporta fallas de internet en Venezuela tras fuertes fluctuaciones: Diversas zonas del país se encuentran sin electricidad en este momento son: - Distrito Capital,Miranda,Aragua, Vargas, Carabobo, Táchira, Mérida y Zulia.\",\n                \"likes\": 0,\n                \"comments\": 0,\n                \"shares\": 0,\n                \"reactions\": 0,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.8028517961502075\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.1511051058769226\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.026334237307310104\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.009442811831831932\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.006649212446063757\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.0022070338018238544\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.0014098974643275142\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.63893723487854\n                    },\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.35890287160873413\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.0021599242463707924\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4971,\n                \"batch\": 40,\n                \"text\": \"#VacúnateYa @Preferida1021\",\n                \"likes\": 96779,\n                \"comments\": 19478,\n                \"shares\": 71606,\n                \"reactions\": 187863,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.9800301194190979\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.006650658790022135\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.004668629262596369\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.0041601331904530525\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.0028885365463793278\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.0008067586459219456\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.000795140746049583\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9977495074272156\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.0019383167382329702\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.0003122661146335304\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4972,\n                \"batch\": 40,\n                \"text\": \"Estado Mayor de #FANB en el edo Bolívar realizó inspección a la Central Hidroeléctrica Antonio José de Sucre en Macagua, garantizando el buen funcionamiento de sus instalaciones.\",\n                \"likes\": 0,\n                \"comments\": 0,\n                \"shares\": 0,\n                \"reactions\": 0,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.9842899441719055\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.006937103811651468\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.003078869776800275\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.0019220644608139992\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.0016328839119523764\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.0014306369703263044\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.000708439270965755\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9670394659042358\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.031511567533016205\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.0014489421155303717\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4973,\n                \"batch\": 40,\n                \"text\": \"#13Oct PuebloPatriota\",\n                \"likes\": 0,\n                \"comments\": 0,\n                \"shares\": 0,\n                \"reactions\": 0,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.9831470847129822\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.005964063107967377\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.003140662331134081\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.0031021975446492434\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.0022760245483368635\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.0014867836143821478\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.0008832531748339534\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9916210174560547\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.007266771048307419\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.001112214638851583\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4974,\n                \"batch\": 40,\n                \"text\": \"#MonómerosEsDeVenezuela\",\n                \"likes\": 0,\n                \"comments\": 0,\n                \"shares\": 0,\n                \"reactions\": 0,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.9751874208450317\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.012454642914235592\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.003282212419435382\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.003220686689019203\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.002771003870293498\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.0021650369744747877\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.0009190304554067552\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9969857335090637\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.0015468609053641558\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.0014674870762974024\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4975,\n                \"batch\": 40,\n                \"text\": \"UnidosPuebloyGNBEsSoberanía https://t.co/GxpU7TeV2H\",\n                \"likes\": 48693,\n                \"comments\": 17112,\n                \"shares\": 71160,\n                \"reactions\": 136965,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.9837194085121155\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.006770501844584942\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.003932817839086056\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.0024134209379553795\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.001548349391669035\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.0010352650424465537\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.0005804060492664576\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9974939823150635\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.0016033255960792303\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.0009028135100379586\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4976,\n                \"batch\": 40,\n                \"text\": \"Infórmate en #SNE PiedrasNegras\",\n                \"likes\": 0,\n                \"comments\": 0,\n                \"shares\": 0,\n                \"reactions\": 0,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.9849686026573181\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.006593725178390741\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.002417017938569188\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.0019275801023468375\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.0019233080092817545\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.001576231443323195\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.0005936964880675077\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9979256391525269\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.0013465720694512129\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.0007278645061887801\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4977,\n                \"batch\": 40,\n                \"text\": \"Agenda tu cita en 👉👉💻https://t.co/o0tiilEAFZ https://t.co/o5ushjo1bA\",\n                \"likes\": 42588,\n                \"comments\": 9527,\n                \"shares\": 8580,\n                \"reactions\": 60695,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.9853681921958923\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.004995810799300671\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.0038092155009508133\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.0026757828891277313\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.0013213520869612694\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.0012264209799468517\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.000603235384915024\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9981400966644287\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.0009841687278822064\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.0008757430477999151\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4978,\n                \"batch\": 40,\n                \"text\": \"@452Vigirima @NicolasMaduro @wistohor @vladimirpadrino @dhernandezlarez @REDICentral_ @ZODI45_Carabobo @LAVOZDESJ Venceremos https://t.co/CLNLUMfolS\",\n                \"likes\": 45449,\n                \"comments\": 587,\n                \"shares\": 74275,\n                \"reactions\": 120311,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.6718370318412781\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.177015021443367\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.14188094437122345\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.00403820164501667\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.0019490071572363377\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.0018514179391786456\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.0014285052893683314\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9854795336723328\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.012334858067333698\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.0021855372469872236\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4979,\n                \"batch\": 40,\n                \"text\": \"@critico2_ la gente no va a querer pagar dolares en los negocios prefieren venderlos para pagar en bolivares porque ay diferencia entre el BCV y el negro\",\n                \"likes\": 57365,\n                \"comments\": 78139,\n                \"shares\": 45746,\n                \"reactions\": 181250,\n                \"emotions\": [\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.8867504596710205\n                    },\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.08219143748283386\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.012898322194814682\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.012242781929671764\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.0026765144430100918\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.0026322389021515846\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.0006082491599954665\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.9851616621017456\n                    },\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.014274361543357372\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.0005639697192236781\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4980,\n                \"batch\": 40,\n                \"text\": \".👑\",\n                \"likes\": 0,\n                \"comments\": 0,\n                \"shares\": 0,\n                \"reactions\": 0,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.974068284034729\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.007302659563720226\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.006678010802716017\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.005284983664751053\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.00280183763243258\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.0025272155180573463\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.001336991903372109\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9951196908950806\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.003193306503817439\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.001687031821347773\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4981,\n                \"batch\": 40,\n                \"text\": \"#LOTTOREY\",\n                \"likes\": 0,\n                \"comments\": 0,\n                \"shares\": 0,\n                \"reactions\": 0,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.9832035303115845\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.004441177472472191\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.004227254074066877\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.003972434904426336\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.001847640029154718\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.0014938642270863056\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.0008139954297803342\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9970332384109497\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.0018704850226640701\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.0010963621316477656\n                    }\n                ],\n                \"processed\": true\n            },\n            {\n                \"id\": 4982,\n                \"batch\": 40,\n                \"text\": \"11/10/2021\",\n                \"likes\": 0,\n                \"comments\": 0,\n                \"shares\": 0,\n                \"reactions\": 0,\n                \"emotions\": [\n                    {\n                        \"label\": \"others\",\n                        \"score\": 0.9738104939460754\n                    },\n                    {\n                        \"label\": \"surprise\",\n                        \"score\": 0.010351388715207577\n                    },\n                    {\n                        \"label\": \"joy\",\n                        \"score\": 0.010173693299293518\n                    },\n                    {\n                        \"label\": \"sadness\",\n                        \"score\": 0.0022348989732563496\n                    },\n                    {\n                        \"label\": \"fear\",\n                        \"score\": 0.0014391352888196707\n                    },\n                    {\n                        \"label\": \"anger\",\n                        \"score\": 0.0011075343936681747\n                    },\n                    {\n                        \"label\": \"disgust\",\n                        \"score\": 0.0008828918216750026\n                    }\n                ],\n                \"sentiments\": [\n                    {\n                        \"label\": \"NEU\",\n                        \"score\": 0.9951748251914978\n                    },\n                    {\n                        \"label\": \"NEG\",\n                        \"score\": 0.0026668028440326452\n                    },\n                    {\n                        \"label\": \"POS\",\n                        \"score\": 0.002158386865630746\n                    }\n                ],\n                \"processed\": true\n            }\n        ]\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "HealthCheck",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0MjIwNTg3LCJpYXQiOjE3MTQyMTY5ODcsImp0aSI6IjAyMjk1ZTNiODgxMjRhMjFiNzI0NjVhN2VkMTJmNzIyIiwidXNlcl9pZCI6MX0.vDp3qAwImciO_aFrWMTDoQY38VOh6Jh00yITlW2BJnk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/healthcheck/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"healthcheck",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

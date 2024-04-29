@@ -32,3 +32,8 @@ Además, puedes iniciar sesión en el front-end utilizando el siguiente usuario 
 
 - Correo electrónico: test@test.com
 - Contraseña: 12345678
+
+Por ulitmo puede encontrar la documentacion del API en el siguiente link
+https://documenter.getpostman.com/view/10213067/2sA3BuXUnA
+
+Al igual que la collecion de postman esta en el repositorio.
