@@ -80,7 +80,7 @@ const Dashboard = () => {
 
 	const parseStatus = (status) => {
 
-		if (status === 'In progress'){
+		if (status === 'In Progress'){
 			return 'En progreso'
 		}
 
@@ -151,7 +151,8 @@ const Dashboard = () => {
 		const result = await response.json();
 		const batchId = result.payload[0].id
 		console.log(result.payload[0])
-		navigate(`/data/${batchId}`)
+		getBatchData(config)
+		// navigate(`/data/${batchId}`)
 
     };
 

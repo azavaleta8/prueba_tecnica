@@ -22,7 +22,7 @@ const Data = () => {
 	const userId = sessionStorage.getItem('user_id');
 	const email = sessionStorage.getItem('email');
 
-	const url = 'http://localhost:8000/';
+	const url = 'http://localhost:8000';
 
 	useEffect(() => {
 
@@ -54,8 +54,9 @@ const Data = () => {
 		});
 	  
 		setLoading(false)
-
+		console.log('rsponde', response)
 		if (!response){
+			console.log('ssssss?')
 			return
 		}
 
@@ -76,7 +77,8 @@ const Data = () => {
 		};
 
 		const result = await response.json();
-		setBatchData(result.payload[0].filter((x) => x.id === id)[0])
+		console.log(result.payload[0].filter((x) => x.id == id), id)
+		setBatchData(result.payload[0].filter((x) => x.id == id)[0])
 		setLoading(false)
 		console.log(batchData)
 	}
