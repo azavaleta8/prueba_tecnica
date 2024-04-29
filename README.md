@@ -1,7 +1,5 @@
 # Prueba Técnica Genios Studio
 
-¡Bienvenido a la Prueba Técnica de Genios Studio!
-
 Para comenzar a trabajar con este repositorio, sigue estas instrucciones:
 
 1. Clona este repositorio en tu máquina local:
