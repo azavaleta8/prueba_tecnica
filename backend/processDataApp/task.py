@@ -30,13 +30,13 @@ def process_csv_data(batch_id, dataset):
             f'{{"inputs":{row[0]}}}'
         )
 
-        emotions = json.dumps([
+        sentiments = json.dumps([
             {'label': 'NEU', 'score': 0}, 
             {'label': 'POS', 'score': 0}, 
             {'label': 'NEG', 'score': 0}
         ])
 
-        sentiments = json.dumps([
+        emotions = json.dumps([
             {'label': 'others', 'score': 0}, 
             {'label': 'joy', 'score': 0}, 
             {'label': 'surprise', 'score': 0}, 
