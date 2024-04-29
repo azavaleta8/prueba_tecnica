@@ -235,6 +235,12 @@ class ProcessUnprocessedDataAPIView(APIView):
                 "errors": {'error': ['Batch not Found']}
             }, status=status.HTTP_404_NOT_FOUND)
 
+        try:
+            batch.status = 'In Progress'
+            batch.save()
+        except Exception as e:
+            print(f"Error al actualizar el campo: {e}")
+
         process_unprocessed_data.delay(batch_data_id)
         serializer = BatchDataSerializer(batch)
 
