@@ -65,11 +65,6 @@ span {
     margin: auto;
 }
 
-span:hover {
-    cursor: pointer;
-    color :gray;
-}
-
 button:disabled{
     background-color: gray;
     opacity: 50%;

@@ -78,7 +78,7 @@ const Dashboard = () => {
 		}
 
 		if (status == 'Imcomplete'){
-			return 'Imcompleto'
+			return 'Incompleto'
 		}
 
 		if (status == 'Finished'){
@@ -109,7 +109,7 @@ const Dashboard = () => {
 					</div>
 
 					{batchData && batchData.length == 0 && (
-						<div style={{textAlign:'center'}}>No hay lotes de data</div>
+						<div style={{'textAlign':'center'}}>No hay lotes de data</div>
 					)}
   
 					{ (batchData && batchData.length > 0) && 
@@ -125,7 +125,7 @@ const Dashboard = () => {
 										<div>Estado: {parseStatus(batch.status)}</div>
 									</div>
 
-									<span onClick={() => navigate('/data', {data: {batch}})} className='form-btn'>
+									<span onClick={() => navigate(`/data/${batch.id}`)} className='form-btn'>
 										<div style={{'margin':'auto','textAlign':'center'}}>Ver data</div>
 									</span>
 								
