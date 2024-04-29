@@ -4,7 +4,7 @@ Para comenzar a trabajar con este repositorio, sigue estas instrucciones:
 
 1. Clona este repositorio en tu máquina local:
 
-git clone https://github.com/tu_usuario/prueba_tecnica.git
+git clone https://github.com/azavaleta8/prueba_tecnica.git
 
 2. Una vez clonado, navega al directorio del repositorio:
 
